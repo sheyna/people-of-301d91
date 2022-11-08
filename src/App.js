@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+import Header from './Header.js';
+import Person from './Person.js';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <>
+        <Header/>
+        <main>
+          <Person 
+            name="Sheyna" 
+            favFood="icecream" 
+            hometown="Seattle"
+            isHappy={true}
+            favThing={['kittens', 'Star Wars', 'family history']}
+          />
+          <Person name="Keyan"/>
+          <Person name="Jason"/>
+          <Person name="Oliver"/>
+        </main>
+        <footer>© Code Fellows 2022</footer>
+      </>
+    );
+  }
 }
 
 export default App;

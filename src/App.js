@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header.js';
-import Person from './Person.js';
 import Main from './Main.js';
 import './App.css';
 

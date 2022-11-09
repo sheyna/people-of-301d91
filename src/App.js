@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header.js';
-import Person from './Person.js';
+import Main from './Main.js';
 import './App.css';
 
 class App extends React.Component {
@@ -8,18 +8,7 @@ class App extends React.Component {
     return (
       <>
         <Header/>
-        <main>
-          <Person 
-            name="Sheyna" 
-            favFood="icecream" 
-            hometown="Seattle"
-            isHappy={true}
-            favThing={['kittens', 'Star Wars', 'family history']}
-          />
-          <Person name="Keyan"/>
-          <Person name="Jason"/>
-          <Person name="Oliver"/>
-        </main>
+        <Main/>
         <footer>© Code Fellows 2022</footer>
       </>
     );

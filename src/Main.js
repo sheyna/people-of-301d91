@@ -1,27 +1,27 @@
 import React from 'react';
 import Person from './Person.js';
-import data from './data.json';
 import './Main.css';
 
 class Main extends React.Component {
+
+  // there's no addhearts method on Main
+
   render() {
     // console.log(data);
-
-    let peopleArray = [];
-    data.forEach((pep, idx) => {
-      // console.log(pep);
-      // console.log(idx);
-      peopleArray.push(
-        <Person
-          name={pep.name}
-          imageURL={pep.imageURL}
-          key={idx}
-        />
-      )
+    // console.log(this.props.addHearts);
+    // console.log(this.props);
+    let peopleArray = this.props.data.map((pep, idx) => {
+      return <Person
+        name={pep.name}
+        imageURL={pep.imageURL}
+        key={idx}
+        addHearts={this.props.addHearts}
+        handleOpenModal={this.props.handleOpenModal}
+      />
     });
     return (
       <main>
-       {peopleArray}
+        {peopleArray}
       </main>
     )
   }

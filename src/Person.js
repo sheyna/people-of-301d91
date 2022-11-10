@@ -32,16 +32,23 @@ class Person extends React.Component {
     });
   };
 
+  // this.props.handleOpenModal(this.props.name);
+
+  handleTitleClick = () => {
+    this.props.handleOpenModal(this.props.name);
+  }
+
   render() {
-    console.log(this.props);
+    // console.log(this.props.name);
     return (
       <article>
-        <h3>{this.props.name}</h3>
+        <h3 onClick={this.handleTitleClick}>{this.props.name}</h3>
         <p>👋 {this.state.greetings} greetings</p>
         <p onClick={this.handleGreeting}>Say Hello!</p>
         <img
           src={this.props.imageURL}
           alt={this.props.name}
+          onClick={this.props.addHearts}
         />
         {/* WTF */}
         <div>{this.state.helpMe ? 'I need help' : ''}</div>
@@ -53,3 +60,11 @@ class Person extends React.Component {
 }
 
 export default Person;
+
+
+
+// function sayHi() {
+//   console.log('hi');
+// }
+
+// sayHi('Sheyna');
